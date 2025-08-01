@@ -33,7 +33,6 @@ CREATE TABLE tracks (
   tags TEXT[],
   soloists TEXT,               
   s3_key TEXT UNIQUE,
-  s3_url TEXT,
   preview_url TEXT,
 
   original_format TEXT,
