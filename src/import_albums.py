@@ -17,6 +17,10 @@ DB_CONFIG = {
     "port": int(os.getenv("DB_PORT", 5432))
 }
 
+def is_valid_time_format(s):
+    parts = s.strip().split(":")
+    return len(parts) == 2 or len(parts) == 3
+
 def validate_row(row):
     errors = []
     if not row["title"]:
@@ -30,10 +34,9 @@ def validate_row(row):
     if not isinstance(row["genre"], str) or not row["genre"].startswith("{"):
         errors.append("genre should be in {Concerto,Symphony} format")
     if row["total_duration"]:
-        try:
-            pd.to_timedelta("00:" + row["total_duration"]) if len(row["total_duration"].split(":")) == 2 else pd.to_timedelta(row["total_duration"])
-        except Exception:
-            errors.append("Invalid total_duration format")
+        if not is_valid_time_format(row["total_duration"]):
+            errors.append("Invalid total_duration format (expected MM:SS or HH:MM:SS)")
+
     return errors
 
 df = pd.read_csv(CSV_FILE)

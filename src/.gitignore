@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+# Metadata on csv files
+*.csv
+
 # Virtual environments
 .venv/
 env/
