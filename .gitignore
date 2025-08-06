@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+
+# Virtual Environments
+venv/
+env/
+.venv/
+
+# dotenv
+.env
+.env.*
+
+# macOS
+.DS_Store
+
+# VSCode
+.vscode/
+
+# PyCharm / JetBrains
+.idea/
+
+# AWS SAM/Serverless Framework/CloudFormation
+.aws-sam/
+.serverless/
+template-export.json
+
+# Zip packages for Lambda
+*.zip
+
+# Other OS-specific
+Thumbs.db
+
