@@ -36,3 +36,9 @@ template-export.json
 # Other OS-specific
 Thumbs.db
 
+# Lambda files
+# Ignore all contents inside lambda_psycopg2
+lambda_psycopg2/*
+
+# Except these files
+!lambda_psycopg2/README.md
